@@ -4,12 +4,15 @@ authors = ["GiggleLiu <cacate0129@gmail.com> and contributors"]
 version = "0.1.0"
 
 [deps]
-GenericTensorNetworks = "3521c873-ad32-4bb4-b63d-f4f178f42b49"
 Genie = "c43c736e-a2d1-11e8-161f-af95117fbd1e"
-GraphUtilities = "b21f8933-5eb2-48a8-b9a5-87a408e1d5ec"
+HTTP = "cd3eb016-35fb-5094-929b-558a96fad6f3"
+JSON = "682c06a0-de6a-54ab-a142-c8b1cf79cde6"
 
 [compat]
 julia = "1"
+Genie = "4"
+HTTP = "0.9"
+JSON = "0.21"
 
 [extras]
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
