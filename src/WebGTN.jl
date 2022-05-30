@@ -1,5 +1,8 @@
 module WebGTN
 
-# Write your package code here.
+using Genie, Genie.Router, Genie.Requests, Genie.Renderer.Json
+using GenericTensorNetworks, GraphUtilities
+
+include("serve.jl")
 
 end

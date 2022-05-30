@@ -3,6 +3,11 @@ uuid = "c9b39008-4b55-4562-adb7-940ede789a6b"
 authors = ["GiggleLiu <cacate0129@gmail.com> and contributors"]
 version = "0.1.0"
 
+[deps]
+GenericTensorNetworks = "3521c873-ad32-4bb4-b63d-f4f178f42b49"
+Genie = "c43c736e-a2d1-11e8-161f-af95117fbd1e"
+GraphUtilities = "b21f8933-5eb2-48a8-b9a5-87a408e1d5ec"
+
 [compat]
 julia = "1"
 
