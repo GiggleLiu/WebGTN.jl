@@ -1,7 +1,7 @@
-using WebGTN
 using Graphs
+using HTTP, JSON
 
-# specify the task
+# application 1: solve the graph property
 d_solve = Dict(
     "api"=>"solve",
     "api.solve" => Dict(
@@ -11,6 +11,7 @@ d_solve = Dict(
     )
 )
 
+# application 2: access predefined graphs
 d_graph = Dict(
     "api"=>"graph",
     "api.graph" => Dict(
@@ -24,6 +25,7 @@ d_graph = Dict(
     )
 )
 
+# application 3: einsum contraction order optimization
 d_opteinsum = Dict("api"=>"opteinsum",
     "api.opteinsum" => Dict(
         "inputs"=>[[1,2], [2,3], [3,4], [5,4]],
@@ -34,7 +36,17 @@ d_opteinsum = Dict("api"=>"opteinsum",
     )
 )
 
-res_solve = WebGTN.remotecall("http://localhost:8000", "EinsumAlgHub", d_solve)
-res_graph = WebGTN.remotecall("http://localhost:8000", "EinsumAlgHub", d_graph)
-res_help = WebGTN.remotecall("http://localhost:8000", "EinsumAlgHub", Dict("api"=>"help"))
-res_opteinsum = WebGTN.remotecall("http://localhost:8000", "EinsumAlgHub", d_opteinsum)
+#IP = "http://localhost:8000"
+IP = "http://alg-hub.com:8000"
+
+function remotecall(IP::String, PKG::String, dict::AbstractDict)
+    res = HTTP.request("POST", "$IP/$PKG", [("Content-Type", "application/json")], JSON.json(dict))
+    JSON.parse(String(res.body))
+end
+
+# print available keys and its verifier
+println(remotecall(IP, "EinsumAlgHub", Dict("api"=>"help"))["help"])
+
+res_solve = remotecall(IP, "EinsumAlgHub", d_solve)
+res_graph = remotecall(IP, "EinsumAlgHub", d_graph)
+res_opteinsum = remotecall(IP, "EinsumAlgHub", d_opteinsum)
