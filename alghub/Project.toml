@@ -1,0 +1,13 @@
+name = "Alghub"
+uuid = "50260bef-d132-436c-97e7-ee846df2d0a9"
+authors = ["leo "]
+version = "0.1.0"
+
+[deps]
+Dates = "ade2ca70-3891-5945-98fb-dc099432e06a"
+Genie = "c43c736e-a2d1-11e8-161f-af95117fbd1e"
+GraphUtilities = "b21f8933-5eb2-48a8-b9a5-87a408e1d5ec"
+Inflector = "6d011eab-0732-4556-8808-e463c76bf3b6"
+Logging = "56ddb016-857b-54e1-b83d-db4d58db5568"
+LoggingExtras = "e6f89c97-d47a-5376-807f-9c37f3926c36"
+MbedTLS = "739be429-bea8-5141-9913-cc70e7f3736d"
