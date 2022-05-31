@@ -1,11 +1,11 @@
 using Genie, Genie.Router, Genie.Requests, Genie.Renderer.Json
-using GraphUtilities
+using EinsumAlgHub
 
 #route("/") do
 #  serve_static_file("welcome.html")
 #end
 
-PKGS = [GraphUtilities]
+PKGS = [EinsumAlgHub]
 
 for PKG in PKGS
     route("/$PKG", method = POST) do
