@@ -27,14 +27,14 @@ d_graph = Dict(
 d_opteinsum = Dict("api"=>"opteinsum",
     "api.opteinsum" => Dict(
         "inputs"=>[[1,2], [2,3], [3,4], [5,4]],
-        "output"=>[1,6],
+        "output"=>[1,5],
         "method"=>"TreeSA",
         "sizes"=>[[1, 2], [2, 2], [3, 2],
             [4, 2], [5, 2]]
     )
 )
 
-res_solve = WebGTN.remotecall("http://localhost:8000", "GraphUtilities", d_solve)
-res_graph = WebGTN.remotecall("http://localhost:8000", "GraphUtilities", d_graph)
-res_help = WebGTN.remotecall("http://localhost:8000", "GraphUtilities", Dict("api"=>"help"))
-res_opteinsum = WebGTN.remotecall("http://localhost:8000", "GraphUtilities", d_opteinsum)
+res_solve = WebGTN.remotecall("http://localhost:8000", "EinsumAlgHub", d_solve)
+res_graph = WebGTN.remotecall("http://localhost:8000", "EinsumAlgHub", d_graph)
+res_help = WebGTN.remotecall("http://localhost:8000", "EinsumAlgHub", Dict("api"=>"help"))
+res_opteinsum = WebGTN.remotecall("http://localhost:8000", "EinsumAlgHub", d_opteinsum)
